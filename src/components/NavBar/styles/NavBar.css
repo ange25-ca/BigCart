@@ -1,0 +1,180 @@
+/* Estilo general para el nav */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  width: 100%;
+  position: relative;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: flex-start; /* Alinea los elementos al inicio */
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar-logo {
+  margin-right: 1rem;
+  width: 200px;
+  height: 200px;
+}
+
+.brand-name {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navbar-right-section {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos en el centro */
+}
+
+.nav-item.active .nav-link {
+  color: #F3F0CA; /* Color del link activo */
+  font-weight: bold; /* O cualquier estilo que quieras aplicar */
+  border-bottom: 2px solid black; /* Indicador visual */
+}
+
+/* Estilos para el formulario de búsqueda */
+.navbar-search-form {
+  display: flex;
+  align-items: center;
+  margin-left: auto; 
+  margin-right: 1rem; 
+  border: 1.5px solid black;
+  border-radius: 45px;
+  background-color: #3876BF;
+  padding: 20px;
+}
+.btn-cart {
+  margin-right: 60px;
+}
+.btn-cart img {
+  width: 25px;
+  height: 25px;
+  margin-left: -5px;
+}
+.navbar-search-input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-right: 0.5rem;
+  width: 200px;
+  background-color: #F3F0CA;
+}
+
+.navbar-search-btn {
+  padding: 0.3rem 1rem;
+  background-color: #192655;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navbar-search-btn:hover {
+  background-color: #F3F0CA;
+  color: #192655;
+}
+
+/* Estilos para los items de navegación */
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 80px;
+  border: 1.5px solid black;
+  border-radius: 45px;
+  padding: 15px;
+  background-color: #3876BF;
+}
+
+.nav-item {
+  margin-left: 2rem; /* Espaciado a la izquierda */
+  display: flex; /* Permite que el contenido interno se alinee correctamente */
+  align-items: center; /* Centra verticalmente el contenido de la nav-item */
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1rem;
+  color: black;
+  transition: color 0.3s;
+  position: relative; /* Posición relativa para controlar el pseudo-elemento */
+}
+
+/* Efecto hover para la línea en los botones */
+.nav-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  bottom: -5px; /* Ajusta la posición de la línea debajo del texto */
+  left: 50%;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+/* Animación cuando se hace hover */
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #F3F0CA;
+  font-weight: bold;
+}
+
+.profile-item {
+  display: flex; /* Asegúrate de que esté alineado correctamente */
+  align-items: center; /* Centra verticalmente */
+  margin-left: 1rem; /* Espaciado a la izquierda del ícono de perfil */
+}
+
+.profile-circle {
+  width: 40px; /* Tamaño de la imagen */
+  height: 40px; /* Tamaño de la imagen */
+  border-radius: 50%; /* Hace la imagen circular */
+  object-fit: cover; /* Asegura que la imagen mantenga su proporción al redondear */
+  border: 2px solid #fff; /* Un borde blanco opcional alrededor de la imagen */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra opcional para dar profundidad */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+  }
+  
+  .navbar-nav {
+    margin-bottom: 1rem; /* Margen inferior para separar los enlaces de la búsqueda */
+    margin-right: 0; /* Eliminar margen derecho */
+  }
+
+  .navbar-search-form {
+    margin-right: 0; /* Eliminar margen derecho */
+    width: 100%; /* Hacer que el formulario de búsqueda ocupe todo el ancho */
+    justify-content: center; /* Centrar el formulario en pantallas pequeñas */
+  }
+
+  .navbar-search-input {
+    width: auto; /* Ajustar el ancho del input en pantallas pequeñas */
+  }
+
+  .navbar-search-btn {
+    width: auto; /* Ajustar el ancho del botón en pantallas pequeñas */
+  }
+}
